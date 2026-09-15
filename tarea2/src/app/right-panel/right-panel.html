@@ -1,0 +1,9 @@
+@if (selected) {
+  <h2>{{ selected.title }}</h2>
+  <p>Año: {{ selected.year }}</p>
+  <p>Género: {{ selected.genre }}</p>
+  <p>Calificación: {{ selected.rating }}</p>
+  <button (click)="onClear()">Limpiar</button>
+} @else {
+  <p>Selecciona un título</p>
+}

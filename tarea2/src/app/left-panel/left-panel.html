@@ -1,0 +1,10 @@
+<ul>
+  @for (game of games; track game.title) {
+    <li
+      (click)="onSelect(game)"
+      [class.selected]="selected?.title === game.title"
+    >
+      {{ game.title }}
+    </li>
+  }
+</ul>
