@@ -1,0 +1,7 @@
+<a class="card" [routerLink]="['/movies', movie.id]">
+  <img [src]="movie.poster" [alt]="movie.title" />
+  <div class="info">
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.genre }} · {{ movie.year }}</p>
+  </div>
+</a>
