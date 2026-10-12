@@ -1,0 +1,26 @@
+<h1>Películas</h1>
+
+<div class="filters">
+  <input type="text" [formControl]="searchControl" placeholder="Buscar..." />
+
+  <select [formControl]="criterionControl">
+    <option value="all">Todos los campos</option>
+    <option value="title">Título</option>
+    <option value="director">Director</option>
+    <option value="producer">Productor</option>
+    <option value="genre">Género</option>
+    <option value="year">Año</option>
+  </select>
+</div>
+
+<p class="results">{{ filteredMovies().length }} resultado(s)</p>
+
+@if (filteredMovies().length > 0) {
+  <div class="grid">
+    @for (movie of filteredMovies(); track movie.id) {
+      <app-movie-card [movie]="movie" />
+    }
+  </div>
+} @else {
+  <p>No se encontraron películas con ese criterio.</p>
+}

@@ -1,0 +1,24 @@
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.filters select {
+  padding: 0.5rem;
+}
+
+.results {
+  color: #666;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
