@@ -1,0 +1,28 @@
+@if (movie(); as m) {
+  <a routerLink="/" class="back">← Volver a la lista</a>
+
+  <div class="detail">
+    <img [src]="m.poster" [alt]="m.title" />
+
+    <div class="info">
+      <h1>{{ m.title }}</h1>
+
+      <p><strong>Director:</strong> {{ m.director }}</p>
+      <p><strong>Productor:</strong> {{ m.producer }}</p>
+      <p><strong>Género:</strong> {{ m.genre }}</p>
+      <p><strong>Año:</strong> {{ m.year }}</p>
+      <p class="description">{{ m.description }}</p>
+
+      <button
+        type="button"
+        [ngClass]="{ 'is-favorite': favoritesService.isFavorite(m.id) }"
+        (click)="favoritesService.toggle(m)"
+      >
+        {{ favoritesService.isFavorite(m.id) ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
+      </button>
+    </div>
+  </div>
+} @else {
+  <p>No se encontró la película.</p>
+  <a routerLink="/">Volver a la lista</a>
+}
